@@ -1,0 +1,320 @@
+@font-face {
+  font-family: 'Netflix Sans';
+  src: url('/fonts/NetflixSans-Regular.woff2') format('woff2'),
+       url('/fonts/NetflixSans-Regular.woff')  format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* bold / italic variants (repeat for each file) */
+@font-face {
+  font-family: 'Netflix Sans';
+  src: url('/fonts/NetflixSans-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    
+
+}
+body{
+    background-color: black;
+    overflow: hidden auto;  
+
+}
+.main {
+    background-image: url(images/bg.jpg);
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size:max(1300px, 100vw);
+}
+
+.main .box {
+    background-color: black;
+    opacity: 0.78;
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    top: 0;
+
+}
+
+nav {
+    max-width: 80vw;
+    display: flex;
+    align-items: center;
+    margin: auto;
+    justify-content: space-between;
+    height: 62px;
+    padding-top: 10px;
+
+}
+.logo {
+    width: 150px;
+    color: red;
+    position: relative;
+    z-index: 10;
+}
+.button {
+    justify-content: end;
+    justify-items: end;
+    position: relative;
+    z-index: 10;
+}
+.text{
+    color: white;
+    display: flex;
+    justify-items: center;
+    height: 100%;
+    align-items: center;
+    z-index: 1;
+    flex-direction: column;
+    position: relative;
+     font-family: 'Netflix Sans', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    box-sizing: border-box;
+    padding-top: 160px;
+}
+.text >:first-child{
+    font-weight: 900;
+    font-style: normal;
+    font-size: 56px;
+    line-height: normal;
+    text-align: center;
+
+
+}
+/* you can only give css to imidiate nth child then use > another case take all nth child of div */
+.text >:nth-child(2){
+ font-weight: 900;
+    font-style: normal;
+    font-size: 56px;
+    line-height: normal;
+    text-align: center;
+    margin-bottom: 0.5rem;
+
+}
+.text> :nth-child(3){
+ font-weight: 500;
+    font-style: normal;
+    font-size: 20px;
+    line-height: normal;
+    text-align: center;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+.text>:nth-child(4){
+ font-weight: 400;
+    font-style: normal;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+}
+.mail{
+    padding-top: 16px;
+    height: 60vh;
+    width: 60vw;
+    justify-content: center;
+    margin-left: 350px;
+    
+}
+.email{
+    margin-top: 10px;
+    padding: 15px;
+    border: 0.2px solid rgb(105, 105, 105);
+    border-radius: 3px;
+    background: transparent;
+    height:auto ;
+    width:313px ;
+    display: inline-block;
+    font-family: 'Netflix Sans', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    font-size: medium;
+    color: white;
+  
+}
+.email::placeholder{
+  color: silver;
+  font-size: 17px;
+}
+.btn-lan{
+  margin-right: 12px;
+background: transparent;
+color: white;
+border: 1px solid rgb(88, 88, 88);
+border-radius: 2px;
+display: inline-flex;
+width: 120px;
+height: 33px;
+justify-content: start;
+justify-items: center;
+align-items: self-start;
+padding:8px 10px;
+font-size: medium;
+gap: 7px;
+ position: relative;
+  overflow: hidden;
+}
+.btn-lan::after {
+  content: "▼";
+  position: absolute;
+  right: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 10px;
+  color: white;
+  pointer-events: none;
+}
+.btn-sel {
+  background: transparent;
+  color: white;
+  border: none;
+  outline: none;
+  font-size: 15px;
+  font-family: 'Netflix Sans', sans-serif;
+
+  /* Removes default dropdown look */
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+
+.btn-in{
+  margin-right: 10px;
+  display: inline-flex;
+    justify-content: center;
+    padding:9px 13px;
+    justify-items: center;
+align-items: center;
+display: inline-flex;
+height: auto;
+width:75px ;
+font-size: 13.5px;
+background-color: rgb(229, 9, 20);
+color: white;
+font-weight: 650;
+line-height: 14px;
+font-family: "Netflix Sans", "Helvetica Neue", "Segoe UI", Roboto, Ubuntu, sans-serif;
+border-radius: 5px;
+border: 0.5px solid red;
+}
+.btn{
+    margin-left: 5px;
+    justify-content: center;
+align-items: center;
+display: inline-flex;
+padding:10px 8px 13px 3px;
+height: auto;
+width:200px ;
+gap: 13px;
+font-size: 24px;
+background-color: rgb(229, 9, 20);
+color: white;
+font-weight: 500;
+line-height: 24px;
+font-family: "Netflix Sans", "Helvetica Neue", "Segoe UI", Roboto, Ubuntu, sans-serif;
+border-radius: 5px;
+border: 2px solid red;
+}
+.arrow {
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  display: inline-flex;
+  justify-content: center;
+  padding: 3px;
+}
+.right {
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  justify-content: center;
+}
+.sep {
+  position: relative;
+  height: 10px;        /* reserve visible space for the separator in the flow */
+  margin: 0 0 40px 0;   /* no extra top gap — curve will be pulled up by ::before */
+  z-index: 5;
+  overflow: visible;
+}
+/* Thin curved separator - only reducing bottom blue area */
+.sep::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: -110px;           
+  width: 160%;          
+  height: 360px;          
+  border-radius: 50%;
+  pointer-events: none;
+
+  /* Your image + new black gradient */
+  background:
+    url('/mnt/data/bb858ce7-a59d-41d9-8384-6f3edbb59289.png') center top / cover no-repeat,
+    radial-gradient(circle at 50% 15%, 
+    rgb(7, 7, 41) 0%, 
+      #000 50%, 
+      #000 100%
+    );
+
+  border-top: 4px solid #d11654;
+
+  /* Darker inner shadow */
+  box-shadow: 
+    0 50px 150px -40px rgba(0,0,0,0.9) inherit;
+    
+
+  /* Shows only the curved top strip */
+  clip-path: inset(0 0 79% 0);
+}
+
+
+
+/* tweak notes:
+   - increase the negative `top` (e.g. -140px) to make the overlap larger
+   - decrease it (e.g. -60px) to reduce overlap
+   - change width/height to adjust curve depth
+   - if the previous section has z-index, ensure .sep::before has higher z-index if needed */
+.trand{
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    z-index: 10;
+    top: -90px;
+    margin-left: 150px;
+    margin-right: 100px;
+
+}
+.trand-nav{
+    position: relative;
+    color: white;
+    font-family: 'Netflix Sans', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: normal;
+}
+.list{
+    position: relative;
+    display: flex;
+    width: 75%;
+    box-sizing: border-box;
+    gap: 10px;
+    overflow-y: visible;
+    overflow-x: scroll;
+    scrollbar-width: none;
+    scroll-snap-type: x mandatory;
+    scroll-margin-inline-start: 2.5em;
+    margin-right: 150px;
+    padding-right: 150px;
+}
+.img{
+
+    border-radius: 0.5rem;
+}
