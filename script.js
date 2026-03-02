@@ -258,11 +258,12 @@ function showToast(message, type = 'success') {
         position:fixed; bottom:32px; left:50%;
         transform:translateX(-50%) translateY(20px);
         background:${type === 'error' ? '#e50914' : '#2ecc71'};
-        color:white; padding:14px 28px; border-radius:6px;
+        color:white; padding:12px 24px; border-radius:6px;
         font-size:15px; font-family:'Netflix Sans',sans-serif; font-weight:600;
         z-index:9999; box-shadow:0 4px 20px rgba(0,0,0,0.5);
         opacity:0; transition:opacity 0.3s ease,transform 0.3s ease;
-        white-space:nowrap;
+        white-space:normal; max-width:calc(100vw - 40px);
+        text-align:center; word-break:break-word;
     `;
     document.body.appendChild(toast);
 
@@ -396,4 +397,146 @@ document.addEventListener('DOMContentLoaded', () => {
 (function initSignIn() {
     const btn = document.querySelector('.btn-in');
     if (btn) btn.addEventListener('click', () => showToast('Sign In page coming soon!'));
+})();
+
+/* ════════════════════════════════
+   LANGUAGE SWITCHER (EN / HI)
+   ════════════════════════════════ */
+(function initLanguageSwitcher() {
+
+    const translations = {
+        en: {
+            signIn: 'Sign In',
+            heroLine1: 'Unlimited movies,',
+            heroLine2: 'shows, and more',
+            heroSub: 'Starts at 149. Cancel at any time.',
+            heroCta: 'Ready to watch? Enter your email to create or restart your membership.',
+            emailPlaceholder: 'Email address',
+            getStarted: 'Get Started',
+            trendingTitle: 'Trending Now',
+            optIndia: 'India', optGlobal: 'Global', optMovies: 'Movies', optTV: 'TV Shows',
+            trendingNum: (n) => `Trending #${n}`,
+            reasonsTitle: 'More reasons to join',
+            r1Title: 'Enjoy on your TV',
+            r1Desc: 'Watch on smart TVs, PlayStation, Xbox, Chromecast, Apple TV, Blu-ray players and more.',
+            r2Title: 'Download your shows to watch offline',
+            r2Desc: 'Save your favourites easily and always have something to watch.',
+            r3Title: 'Watch everywhere',
+            r3Desc: 'Stream unlimited movies and TV shows on your phone, tablet, laptop, and TV.',
+            r4Title: 'Create profiles for kids',
+            r4Desc: 'Send kids on adventures with their favourite characters in a space made just for them — free with your membership.',
+            faqTitle: 'Frequently Asked Questions',
+            faq1Q: 'What is Netflix?',
+            faq1A1: 'Netflix is a streaming service that offers a wide variety of award-winning TV shows, movies, anime, documentaries and more on thousands of internet-connected devices.',
+            faq1A2: "You can watch as much as you want, whenever you want, without a single ad - all for one low monthly price. There's always something new to discover, and new TV shows and movies are added every week!",
+            faq2Q: 'How much does Netflix cost?',
+            faq2A1: 'Watch Netflix on your smartphone, tablet, Smart TV, laptop, or streaming device, all for one fixed monthly fee. Plans range from Rs 149 to Rs 649 a month. No extra costs, no contracts.',
+            faq3Q: 'Where can I watch?',
+            faq3A1: 'Watch anywhere, anytime. Sign in with your Netflix account to watch instantly on the web at netflix.com from your personal computer or on any internet-connected device that offers the Netflix app, including smart TVs, smartphones, tablets, streaming media players and game consoles.',
+            faq3A2: "You can also download your favourite shows with the iOS or Android app. Use downloads to watch while you're on the go and without an internet connection. Take Netflix with you anywhere.",
+            faq4Q: 'How do I cancel?',
+            faq4A1: 'Netflix is flexible. There are no annoying contracts and no commitments. You can easily cancel your account online in two clicks. There are no cancellation fees - start or stop your account anytime.',
+            faq5Q: 'What can I watch on Netflix?',
+            faq5A1: 'Netflix has an extensive library of feature films, documentaries, TV shows, anime, award-winning Netflix originals, and more. Watch as much as you want, anytime you want.',
+            faq6Q: 'Is Netflix good for kids?',
+            faq6A1: 'The Netflix Kids experience is included in your membership to give parents control while kids enjoy family-friendly TV shows and films in their own space.',
+            faq6A2: "Kids profiles come with PIN-protected parental controls that let you restrict the maturity rating of content kids can watch and block specific titles you don't want kids to see.",
+            footerPhone: 'Questions? Call <a href="tel:0008009191743" class="footer-phone-link">000-800-919-1743</a>',
+            fFAQ: 'FAQ', fInvestor: 'Investor Relations', fPrivacy: 'Privacy', fSpeed: 'Speed Test',
+            fHelp: 'Help Centre', fJobs: 'Jobs', fCookie: 'Cookie Preferences', fLegal: 'Legal Notices',
+            fAccount: 'Account', fWatch: 'Ways to Watch', fCorp: 'Corporate Information', fOnly: 'Only on Netflix',
+            fMedia: 'Media Centre', fTerms: 'Terms of Use', fContact: 'Contact Us',
+            footerLocation: 'Netflix India',
+        },
+        hi: {
+            signIn: 'साइन इन करें',
+            heroLine1: 'असीमित फिल्में,',
+            heroLine2: 'शोज़, और भी बहुत कुछ',
+            heroSub: '149 से शुरू। कभी भी रद्द करें।',
+            heroCta: 'देखना शुरू करें? मेंबरशिप बनाने या फिर शुरू करने के लिए अपना ईमेल दर्ज करें।',
+            emailPlaceholder: 'ईमेल पता',
+            getStarted: 'शुरू करें',
+            trendingTitle: 'अभी ट्रेंडिंग',
+            optIndia: 'भारत', optGlobal: 'विश्व', optMovies: 'फिल्में', optTV: 'टीवी शोज़',
+            trendingNum: (n) => `ट्रेंडिंग #${n}`,
+            reasonsTitle: 'जुड़ने के और कारण',
+            r1Title: 'अपने टीवी पर आनंद लें',
+            r1Desc: 'स्मार्ट टीवी, PlayStation, Xbox, Chromecast, Apple TV, Blu-ray प्लेयर और अन्य पर देखें।',
+            r2Title: 'शोज़ डाउनलोड करें और ऑफलाइन देखें',
+            r2Desc: 'अपने पसंदीदा को आसानी से सेव करें और हमेशा कुछ देखते रहें।',
+            r3Title: 'कहीं भी देखें',
+            r3Desc: 'अपने फोन, टैबलेट, लैपटॉप और टीवी पर असीमित फिल्में और शोज़ स्ट्रीम करें।',
+            r4Title: 'बच्चों के लिए प्रोफाइल बनाएं',
+            r4Desc: 'बच्चों को उनके पसंदीदा किरदारों के साथ रोमांच पर भेजें — उनके लिए बने एक खास स्थान में, आपकी मेंबरशिप के साथ मुफ्त।',
+            faqTitle: 'अक्सर पूछे जाने वाले सवाल',
+            faq1Q: 'Netflix क्या है?',
+            faq1A1: 'Netflix एक स्ट्रीमिंग सेवा है जो हजारों इंटरनेट-कनेक्टेड डिवाइस पर पुरस्कार विजेता टीवी शोज़, फिल्में, एनीमे और डॉक्यूमेंट्री प्रदान करती है।',
+            faq1A2: 'आप जितना चाहें, जब चाहें, बिना किसी विज्ञापन के देख सकते हैं — सिर्फ एक कम मासिक मूल्य पर। हर हफ्ते नए शोज़ और फिल्में जुड़ती रहती हैं!',
+            faq2Q: 'Netflix की कीमत कितनी है?',
+            faq2A1: 'अपने स्मार्टफोन, टैबलेट, स्मार्ट टीवी, लैपटॉप पर Netflix देखें — एक निश्चित मासिक शुल्क पर। प्लान 149 से 649 प्रति माह तक हैं।',
+            faq3Q: 'मैं कहाँ देख सकता/सकती हूँ?',
+            faq3A1: 'कहीं भी, कभी भी देखें। अपने Netflix खाते से साइन इन करें और netflix.com पर या Netflix ऐप वाले किसी भी डिवाइस — स्मार्ट टीवी, स्मार्टफोन, टैबलेट और गेम कंसोल सहित — पर तुरंत देखें।',
+            faq3A2: 'iOS या Android ऐप से अपने पसंदीदा शोज़ डाउनलोड करें और इंटरनेट के बिना भी देखें। Netflix को अपने साथ कहीं भी ले जाएं।',
+            faq4Q: 'मैं कैसे रद्द करूँ?',
+            faq4A1: 'Netflix लचीला है। कोई झंझट भरे अनुबंध नहीं — अपना खाता ऑनलाइन दो क्लिक में आसानी से रद्द करें। कोई रद्दीकरण शुल्क नहीं।',
+            faq5Q: 'Netflix पर मैं क्या देख सकता/सकती हूँ?',
+            faq5A1: 'Netflix में फीचर फिल्मों, डॉक्यूमेंट्री, टीवी शोज़, एनीमे, Netflix ओरिजिनल्स और बहुत कुछ का विशाल संग्रह है।',
+            faq6Q: 'क्या Netflix बच्चों के लिए अच्छा है?',
+            faq6A1: 'Netflix Kids अनुभव आपकी मेंबरशिप में शामिल है, जिससे माता-पिता नियंत्रण रख सकते हैं जबकि बच्चे पारिवारिक फिल्में एन्जॉय करते हैं।',
+            faq6A2: 'बच्चों की प्रोफाइल में PIN-सुरक्षित माता-पिता नियंत्रण हैं, जिससे आप सामग्री की परिपक्वता रेटिंग सीमित कर सकते हैं।',
+            footerPhone: 'सवाल हैं? कॉल करें <a href="tel:0008009191743" class="footer-phone-link">000-800-919-1743</a>',
+            fFAQ: 'सामान्य प्रश्न', fInvestor: 'निवेशक संबंध', fPrivacy: 'गोपनीयता', fSpeed: 'स्पीड टेस्ट',
+            fHelp: 'सहायता केंद्र', fJobs: 'नौकरियाँ', fCookie: 'कुकी प्राथमिकताएँ', fLegal: 'कानूनी नोटिस',
+            fAccount: 'खाता', fWatch: 'देखने के तरीके', fCorp: 'कॉर्पोरेट जानकारी', fOnly: 'केवल Netflix पर',
+            fMedia: 'मीडिया केंद्र', fTerms: 'उपयोग की शर्तें', fContact: 'हमसे संपर्क करें',
+            footerLocation: 'Netflix India',
+        }
+    };
+
+    function applyLanguage(lang) {
+        const t = translations[lang];
+        if (!t) return;
+        document.documentElement.lang = lang === 'hi' ? 'hi' : 'en';
+
+        ['lang-select-nav', 'lang-select-footer'].forEach(id => {
+            const sel = document.getElementById(id);
+            if (sel) sel.value = lang;
+        });
+
+        document.querySelectorAll('[data-i18n]').forEach(el => {
+            const key = el.getAttribute('data-i18n');
+            if (key === 'trendingNum') {
+                const num = el.getAttribute('data-i18n-num');
+                const val = t[key];
+                el.textContent = typeof val === 'function' ? val(num) : val;
+            } else if (key === 'footerPhone') {
+                el.innerHTML = t[key];
+            } else if (t[key] !== undefined) {
+                el.textContent = t[key];
+            }
+        });
+
+        document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+            const key = el.getAttribute('data-i18n-placeholder');
+            if (t[key] !== undefined) el.placeholder = t[key];
+        });
+
+        document.querySelectorAll('option[data-i18n]').forEach(el => {
+            const key = el.getAttribute('data-i18n');
+            if (t[key] !== undefined) el.textContent = t[key];
+        });
+    }
+
+    function onLangChange(e) {
+        applyLanguage(e.target.value);
+        showToast(
+            e.target.value === 'hi' ? '��🇳 हिन्दी में बदल दिया गया' : '🌐 Switched to English',
+            'success'
+        );
+    }
+
+    document.getElementById('lang-select-nav')?.addEventListener('change', onLangChange);
+    document.getElementById('lang-select-footer')?.addEventListener('change', onLangChange);
+
+    applyLanguage('en');
 })();

@@ -738,12 +738,64 @@ nav {
 }
 
 
+/* ════════════════════════════════
+   RESPONSIVE — 1200px (large tablets / small laptops)
+   ════════════════════════════════ */
 @media (max-width: 1200px) {
     .reasons-grid {
         grid-template-columns: repeat(2, 1fr);
     }
+
+    .trand-nav,
+    .list-wrap,
+    .reasons,
+    .faq,
+    .footer {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
 }
 
+/* ════════════════════════════════
+   RESPONSIVE — 1024px (tablets landscape)
+   ════════════════════════════════ */
+@media (max-width: 1024px) {
+
+    .text>span:nth-child(1),
+    .text>span:nth-child(2) {
+        font-size: 46px;
+    }
+
+    .text>span:nth-child(3) {
+        font-size: 20px;
+    }
+
+    .text>span:nth-child(4) {
+        font-size: 17px;
+    }
+
+    .reasons-title,
+    .faq-title {
+        font-size: 26px;
+    }
+
+    .reason-card-title {
+        font-size: 18px;
+    }
+
+    .rank-num {
+        font-size: 130px;
+    }
+
+    .img img {
+        width: 145px;
+        height: 205px;
+    }
+}
+
+/* ════════════════════════════════
+   RESPONSIVE — 900px (tablets portrait)
+   ════════════════════════════════ */
 @media (max-width: 900px) {
 
     .trand-nav,
@@ -755,78 +807,530 @@ nav {
         padding-right: 24px;
     }
 
-    .foot-links {
+    .footer-links {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    .reasons-title,
+    .faq-title {
+        font-size: 24px;
+    }
+
+    .faq-question {
+        font-size: 18px;
+        padding: 18px 20px;
+    }
+
+    .faq-answer p {
+        font-size: 16px;
+        padding: 16px 20px;
+    }
+
+    .footer::before {
+        left: 24px;
+        right: 24px;
     }
 }
 
+/* ════════════════════════════════
+   RESPONSIVE — 768px (mobile landscape / small tablets)
+   ════════════════════════════════ */
 @media (max-width: 768px) {
     nav {
-        max-width: 92%;
-        height: 60px;
+        max-width: 94%;
+        height: 56px;
+        padding-top: 6px;
     }
 
     .logo {
-        width: 110px;
+        width: 100px;
+    }
+
+    .btn-lan {
+        padding: 6px 24px 6px 10px;
+        font-size: 13px;
+    }
+
+    .btn-sel {
+        font-size: 13px;
+        max-width: 70px;
+    }
+
+    .btn-in {
+        padding: 7px 13px;
+        font-size: 13px;
+    }
+
+    /* Hero */
+    .main {
+        background-size: cover;
+        min-height: 480px;
+    }
+
+    .text {
+        padding-top: 100px;
+        padding-bottom: 60px;
+        padding-left: 16px;
+        padding-right: 16px;
     }
 
     .text>span:nth-child(1),
     .text>span:nth-child(2) {
-        font-size: 36px;
+        font-size: 32px;
     }
 
     .text>span:nth-child(3) {
-        font-size: 18px;
+        font-size: 17px;
     }
 
     .text>span:nth-child(4) {
-        font-size: 15px;
-        padding: 0 16px;
+        font-size: 14px;
+        padding: 0 8px;
     }
 
     .mail {
         flex-direction: column;
-        padding: 16px 24px 0;
+        padding: 16px 8px 0;
         align-items: stretch;
+        gap: 8px;
     }
 
     .email {
         width: 100%;
+        font-size: 15px;
+        padding: 14px 14px;
     }
 
     .btn {
         width: 100%;
-        font-size: 18px;
+        font-size: 17px;
+        padding: 14px 20px;
         justify-content: center;
     }
 
+    /* Trending */
+    .rank-num {
+        font-size: 100px;
+        letter-spacing: -8px;
+    }
+
+    .img img {
+        width: 115px;
+        height: 162px;
+    }
+
+    .img {
+        padding-left: 46px;
+    }
+
+    .card-overlay {
+        inset: 0 0 0 46px;
+    }
+
+    .slider-btn {
+        width: 38px;
+        height: 80px;
+        font-size: 28px;
+    }
+
+    /* Reasons */
     .reasons-grid {
         grid-template-columns: 1fr;
+    }
+
+    .reasons-title,
+    .faq-title {
+        font-size: 22px;
+    }
+
+    .reason-card {
+        min-height: 180px;
+        padding: 20px 18px 18px;
+    }
+
+    .reason-card-title {
+        font-size: 17px;
+    }
+
+    .reason-card-desc {
+        font-size: 14px;
+    }
+
+    .reason-svg {
+        width: 40px;
+        height: 40px;
+    }
+
+    /* FAQ */
+    .faq {
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+
+    .faq-question {
+        font-size: 16px;
+        padding: 16px 18px;
+    }
+
+    .faq-icon {
+        font-size: 24px;
+    }
+
+    .faq-answer p {
+        font-size: 15px;
+        padding: 14px 18px;
+    }
+
+    .faq-cta-text {
+        font-size: 15px;
+    }
+
+    /* Footer */
+    .footer {
+        padding-top: 40px;
+        padding-bottom: 28px;
     }
 
     .footer-links {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .rank-num {
-        font-size: 110px;
+    .footer::before {
+        left: 24px;
+        right: 24px;
     }
 
-    .img img {
-        width: 120px;
-        height: 170px;
+    /* Splash intro */
+    #splash-n-solo {
+        font-size: 140px;
+    }
+
+    .sl {
+        font-size: 90px;
     }
 }
 
+/* ════════════════════════════════
+   RESPONSIVE — 480px (mobile portrait)
+   ════════════════════════════════ */
 @media (max-width: 480px) {
-    .footer-links {
-        grid-template-columns: 1fr;
+    nav {
+        max-width: 96%;
     }
 
+    .logo {
+        width: 80px;
+    }
+
+    /* Hide language button text on very small screens */
+    .btn-lan .btn-sel {
+        max-width: 0;
+        overflow: hidden;
+        opacity: 0;
+        padding: 0;
+    }
+
+    .btn-lan {
+        padding: 6px 10px;
+        gap: 0;
+        margin-right: 4px;
+    }
+
+    /* Hero */
+    .main {
+        min-height: 420px;
+    }
+
+    .text {
+        padding-top: 80px;
+        padding-bottom: 48px;
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .text>span:nth-child(1),
+    .text>span:nth-child(2) {
+        font-size: 26px;
+    }
+
+    .text>span:nth-child(3) {
+        font-size: 15px;
+    }
+
+    .text>span:nth-child(4) {
+        font-size: 13px;
+        padding: 0;
+    }
+
+    .mail {
+        padding: 12px 0 0;
+    }
+
+    .email {
+        padding: 13px 12px;
+        font-size: 14px;
+    }
+
+    .btn {
+        font-size: 16px;
+        padding: 13px 16px;
+    }
+
+    /* Trending */
     .trand-nav {
         flex-direction: column;
         align-items: flex-start;
+        gap: 10px;
+        padding-bottom: 4px;
+    }
+
+    .trand-title {
+        font-size: 18px;
+    }
+
+    .trand-filters {
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    .trand-select {
+        font-size: 13px;
+        padding: 6px 26px 6px 10px;
+    }
+
+    .rank-num {
+        font-size: 80px;
+        letter-spacing: -6px;
+    }
+
+    .img img {
+        width: 100px;
+        height: 142px;
+    }
+
+    .img {
+        padding-left: 38px;
+    }
+
+    .card-overlay {
+        inset: 0 0 0 38px;
+    }
+
+    .slider-btn {
+        width: 32px;
+        height: 64px;
+        font-size: 22px;
+    }
+
+    .list-wrap {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .trand-nav {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    /* Reasons */
+    .reasons {
+        padding: 32px 16px 36px;
+    }
+
+    .reasons-title {
+        font-size: 20px;
+        margin-bottom: 16px;
+    }
+
+    .reason-card {
+        min-height: 160px;
+        padding: 18px 16px 16px;
+    }
+
+    .reason-card-title {
+        font-size: 16px;
+    }
+
+    .reason-card-desc {
+        font-size: 13px;
+    }
+
+    .reason-svg {
+        width: 36px;
+        height: 36px;
+    }
+
+    /* FAQ */
+    .faq {
+        padding: 32px 16px 36px;
+    }
+
+    .faq-title {
+        font-size: 20px;
+        margin-bottom: 16px;
+    }
+
+    .faq-question {
+        font-size: 15px;
+        padding: 14px 16px;
         gap: 12px;
+    }
+
+    .faq-icon {
+        font-size: 22px;
+    }
+
+    .faq-answer p {
+        font-size: 14px;
+        padding: 12px 16px;
+        line-height: 1.6;
+    }
+
+    .faq-cta {
+        margin-top: 28px;
+    }
+
+    .faq-cta-text {
+        font-size: 14px;
+    }
+
+    /* Footer */
+    .footer {
+        padding: 32px 16px 24px;
+    }
+
+    .footer-links {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .footer-col {
+        gap: 12px;
+    }
+
+    .footer-phone {
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+
+    .footer-link {
+        font-size: 12px;
+    }
+
+    .footer::before {
+        left: 16px;
+        right: 16px;
+    }
+
+    /* Splash intro */
+    #splash-n-solo {
+        font-size: 110px;
+    }
+
+    .sl {
+        font-size: 70px;
+    }
+
+    #splash-line {
+        height: 3px;
+    }
+}
+
+/* ════════════════════════════════
+   RESPONSIVE — 360px (small phones)
+   ════════════════════════════════ */
+@media (max-width: 360px) {
+    .logo {
+        width: 72px;
+    }
+
+    .btn-in {
+        padding: 6px 10px;
+        font-size: 12px;
+    }
+
+    /* Hero */
+    .text>span:nth-child(1),
+    .text>span:nth-child(2) {
+        font-size: 22px;
+    }
+
+    .text>span:nth-child(3) {
+        font-size: 13px;
+    }
+
+    .text>span:nth-child(4) {
+        font-size: 12px;
+    }
+
+    .email {
+        padding: 11px 10px;
+        font-size: 13px;
+    }
+
+    .btn {
+        font-size: 14px;
+        padding: 11px 12px;
+    }
+
+    /* Trending */
+    .rank-num {
+        font-size: 65px;
+        letter-spacing: -4px;
+    }
+
+    .img img {
+        width: 85px;
+        height: 122px;
+    }
+
+    .img {
+        padding-left: 30px;
+    }
+
+    .card-overlay {
+        inset: 0 0 0 30px;
+    }
+
+    .slider-btn {
+        width: 26px;
+        height: 52px;
+        font-size: 18px;
+    }
+
+    /* Reasons */
+    .reason-card {
+        min-height: 140px;
+        padding: 14px 12px 12px;
+    }
+
+    .reason-card-title {
+        font-size: 15px;
+    }
+
+    .reason-svg {
+        width: 30px;
+        height: 30px;
+    }
+
+    /* FAQ */
+    .faq-question {
+        font-size: 14px;
+        padding: 12px 14px;
+    }
+
+    .faq-answer p {
+        font-size: 13px;
+        padding: 10px 14px;
+    }
+
+    /* Splash intro */
+    #splash-n-solo {
+        font-size: 90px;
+    }
+
+    .sl {
+        font-size: 56px;
     }
 }
 
