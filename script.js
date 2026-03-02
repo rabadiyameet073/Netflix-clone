@@ -530,7 +530,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function onLangChange(e) {
         applyLanguage(e.target.value);
         showToast(
-            e.target.value === 'hi' ? '��🇳 हिन्दी में बदल दिया गया' : '🌐 Switched to English',
+            e.target.value === 'hi' ? ' हिन्दी में बदल दिया गया' : ' Switched to English',
             'success'
         );
     }
